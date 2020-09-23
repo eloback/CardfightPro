@@ -66,22 +66,22 @@ __meta__ = {
 }
 
 [node name="CardBase" parent="Screen/Panels/CardContainer/CardRow" instance=ExtResource( 2 )]
-cardName = "seeker, sacred wingal"
+cardName = "Seeker, Sacred Wingal"
 
 [node name="CardBase2" parent="Screen/Panels/CardContainer/CardRow" instance=ExtResource( 2 )]
 margin_left = 230.0
 margin_right = 450.0
-cardName = "1"
+cardName = "Dragheart, Luard"
 
 [node name="CardBase3" parent="Screen/Panels/CardContainer/CardRow" instance=ExtResource( 2 )]
 margin_left = 460.0
 margin_right = 680.0
-cardName = "2"
+cardName = "Dragonic Overlord"
 
 [node name="CardBase4" parent="Screen/Panels/CardContainer/CardRow" instance=ExtResource( 2 )]
 margin_left = 690.0
 margin_right = 910.0
-cardName = "3"
+cardName = "Illusionary Revenger, Mordred Phantom"
 
 [node name="CardRow2" type="HBoxContainer" parent="Screen/Panels/CardContainer"]
 margin_top = 304.0
@@ -93,22 +93,22 @@ __meta__ = {
 }
 
 [node name="CardBase" parent="Screen/Panels/CardContainer/CardRow2" instance=ExtResource( 2 )]
-cardName = "4"
+cardName = "Dragonic Overlord"
 
 [node name="CardBase2" parent="Screen/Panels/CardContainer/CardRow2" instance=ExtResource( 2 )]
 margin_left = 230.0
 margin_right = 450.0
-cardName = "5"
+cardName = "Dragonic Blademaster"
 
 [node name="CardBase3" parent="Screen/Panels/CardContainer/CardRow2" instance=ExtResource( 2 )]
 margin_left = 460.0
 margin_right = 680.0
-cardName = "6"
+cardName = "Blaster Blade"
 
 [node name="CardBase4" parent="Screen/Panels/CardContainer/CardRow2" instance=ExtResource( 2 )]
 margin_left = 690.0
 margin_right = 910.0
-cardName = "7"
+cardName = "Dragheart, Luard"
 
 [node name="CardDisplay" type="VBoxContainer" parent="Screen/Panels"]
 margin_left = 1030.0
@@ -138,23 +138,26 @@ margin_right = 250.0
 margin_bottom = 350.0
 
 [node name="CardSearched" type="HBoxContainer" parent="."]
-visible = false
 margin_left = 1030.0
 margin_top = 400.0
 margin_right = 1280.0
 margin_bottom = 500.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="CardBase2" parent="CardSearched" instance=ExtResource( 2 )]
 margin_right = 80.0
 margin_bottom = 100.0
 rect_min_size = Vector2( 80, 100 )
+cardName = ""
 size_loocked = false
 
 [node name="CardName" type="Label" parent="CardSearched"]
 margin_left = 84.0
-margin_top = 43.0
+margin_top = 25.0
 margin_right = 84.0
-margin_bottom = 57.0
+margin_bottom = 75.0
 custom_fonts/font = ExtResource( 5 )
 
 [node name="FadeIn" parent="." instance=ExtResource( 4 )]

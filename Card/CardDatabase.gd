@@ -1,20 +1,21 @@
 
 func get_texture_path(name):
 	match name:
-		"seeker, sacred wingal":
+		"Blaster Blade":
 			return "res://Assets/Textures/1.jpg"
-		"1":
+		"Goddess of Mercy, Inanna":
 			return "res://Assets/Textures/4.jpg"
-		"2":
+		"Dragheart, Luard":
 			return "res://Assets/Textures/2.png"
-		"3":
+		"Dragonic Overlord":
 			return "res://Assets/Textures/3.png"
-		"4":
+		"Seeker, Sacred Wingal":
 			return "res://Assets/Textures/8.jpg"
-		"5":
+		"Illusionary Revenger, Mordred Phantom":
 			return "res://Assets/Textures/5.png"
-		"6":
+		"Lucky Rise, Elprina":
 			return "res://Assets/Textures/7.jpg"
-		"7":
+		"Dragonic Blademaster":
 			return "res://Assets/Textures/6.png"
-	return "res://Assets/Textures/CardBack.jpg" # Default card
+		"example":
+			return "res://Assets/Textures/CardBack.jpg" # Default card

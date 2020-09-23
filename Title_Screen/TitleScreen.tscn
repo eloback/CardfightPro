@@ -64,7 +64,7 @@ anchor_right = 0.0
 margin_top = 169.0
 margin_right = 518.0
 margin_bottom = 229.0
-scene_to_load = "res://Game/DeckEditor.tscn"
+scene_to_load = "res://Scenes/DeckEditor.tscn"
 
 [node name="Settings" parent="Menu/Center/Buttons" instance=ExtResource( 1 )]
 anchor_left = 0.0

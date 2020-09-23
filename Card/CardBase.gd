@@ -18,15 +18,20 @@ func _input(event):
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	$Card.texture = load(cardDatabase.get_texture_path(cardName))
-	if size_loocked:
-		$Card.scale = cardSize/$Card.texture.get_size()
-		$CardBack.scale = cardSize/$CardBack.texture.get_size()
-	else:
-		$Card.scale = rect_size/$Card.texture.get_size()
-		$CardBack.scale = rect_size/$CardBack.texture.get_size()
-	$Card.show()
-	pass # Replace with function body.
+	
+	var texturePath = cardDatabase.get_texture_path(cardName)
+
+	if texturePath != null:
+
+		$Card.texture = load(texturePath)
+		if size_loocked:
+			$Card.scale = cardSize/$Card.texture.get_size()
+			$CardBack.scale = cardSize/$CardBack.texture.get_size()
+		else:
+			$Card.scale = rect_size/$Card.texture.get_size()
+			$CardBack.scale = rect_size/$CardBack.texture.get_size()
+		$Card.show()
+		pass # Replace with function body.
 
 func _change_card_in_display(card):
 	cardName = card.cardName

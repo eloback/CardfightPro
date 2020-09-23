@@ -22,15 +22,20 @@ func _on_Button_Return_pressed():
 	$FadeIn.show()
 	$FadeIn._fade_in()
 
-func _on_FadeIn_fade_finished():
-	get_tree().change_scene("res://Title_Screen/TitleScreen.tscn")
 
-func _on_LineEdit_text_changed(target):
-	for child in $Screen/Panels/CardDisplay/CardsSearched.get_children():
-		child.remove_and_skip()
+func returnToTitle():
+	get_tree().change_scene("res://Title_Screen/TitleScreen.tscn")
+	pass
+
+func _on_FadeIn_fade_finished():
+	returnToTitle();
+	pass
+	
+func getAppropriateMatches(target):
+	
 	var cards_searched = []
-	if target:
-		for row in $Screen/Panels/CardContainer.get_children():
+	
+	for row in $Screen/Panels/CardContainer.get_children():
 			for card in row.get_children():
 				var matches = 0
 				for i in range(target.length()):
@@ -42,9 +47,26 @@ func _on_LineEdit_text_changed(target):
 						break
 				if matches == target.length():
 					cards_searched.append(card)
-	for card in cards_searched:
-		var new_result = $CardSearched.duplicate()
-		$Screen/Panels/CardDisplay/CardsSearched.add_child(new_result)
-		new_result.get_child(0)._change_card_in_display(card)
-		new_result.show()
-		new_result.get_child(1).set_text(card.cardName)
+	return cards_searched
+	
+func printSearchResults(results):
+	if results:
+		for card in results:
+			var new_result = $CardSearched.duplicate()
+			$Screen/Panels/CardDisplay/CardsSearched.add_child(new_result)
+			new_result.get_child(0)._change_card_in_display(card)
+			new_result.show()
+			new_result.get_child(1).set_text(card.cardName)
+	pass
+	
+func clearPastSearchResults():
+	for child in $Screen/Panels/CardDisplay/CardsSearched.get_children():
+		child.remove_and_skip()
+	pass
+
+func _on_LineEdit_text_changed(target):
+	clearPastSearchResults()
+	var searchResults = []
+	if target:
+		searchResults = getAppropriateMatches(target)
+	printSearchResults(searchResults)
