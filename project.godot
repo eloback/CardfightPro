@@ -16,7 +16,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Vanguard Simulator"
-run/main_scene="res://Title_Screen/TitleScreen.tscn"
+run/main_scene="res://Scenes/Title_Screen/TitleScreen.tscn"
 config/icon="res://icon.png"
 
 [display]

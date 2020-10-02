@@ -1,0 +1,671 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Scenes/back_to_title.gd" type="Script" id=1]
+[ext_resource path="res://Card/Card.gd" type="Script" id=2]
+[ext_resource path="res://Scenes/DeckEditor/NewDeckEditor.gd" type="Script" id=3]
+
+[node name="DeckEditor" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Colors" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BackgroundColor" type="ColorRect" parent="Colors"]
+margin_right = 40.0
+margin_bottom = 40.0
+rect_scale = Vector2( 31.9834, 18.0816 )
+color = Color( 0.133333, 0.301961, 0.396078, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CSColumnColor" type="ColorRect" parent="Colors"]
+margin_left = 990.0
+margin_right = 1026.0
+margin_bottom = 40.0
+rect_scale = Vector2( 7.8296, 17.8994 )
+color = Color( 0.054902, 0.192157, 0.270588, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TopRowColor" type="ColorRect" parent="Colors"]
+margin_right = 126.0
+margin_bottom = 8.0
+rect_scale = Vector2( 7.8296, 17.8994 )
+color = Color( 0.054902, 0.192157, 0.270588, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DeckBackgroundColor" type="ColorRect" parent="Colors"]
+margin_top = 150.0
+margin_right = 126.0
+margin_bottom = 182.0
+rect_scale = Vector2( 7.8296, 17.8994 )
+color = Color( 0.231373, 0.482353, 0.623529, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Buttons" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BackButton" type="Button" parent="Buttons"]
+margin_left = 840.0
+margin_right = 990.0
+margin_bottom = 53.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Buttons/BackButton"]
+margin_right = 147.0
+margin_bottom = 53.0
+text = "Back"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="SaveDeckButton" type="Button" parent="Buttons"]
+margin_right = 150.0
+margin_bottom = 53.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Buttons/SaveDeckButton"]
+margin_right = 147.0
+margin_bottom = 53.0
+text = "Save Deck"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="LoadDeckButton" type="Button" parent="Buttons"]
+margin_left = 150.0
+margin_right = 300.0
+margin_bottom = 53.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Buttons/LoadDeckButton"]
+margin_right = 147.0
+margin_bottom = 53.0
+text = "Load Deck"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Card" type="Node2D" parent="."]
+script = ExtResource( 2 )
+
+[node name="DeckPreview" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Row1" type="Control" parent="DeckPreview"]
+margin_top = 150.0
+margin_right = 987.0
+margin_bottom = 260.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CardSlot1" type="MarginContainer" parent="DeckPreview/Row1"]
+margin_right = 90.0
+margin_bottom = 110.0
+rect_pivot_offset = Vector2( 60, 90 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CardSlot2" type="MarginContainer" parent="DeckPreview/Row1"]
+margin_left = 90.0
+margin_right = 180.0
+margin_bottom = 110.0
+rect_pivot_offset = Vector2( 60, 90 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CardSlot3" type="MarginContainer" parent="DeckPreview/Row1"]
+margin_left = 180.0
+margin_right = 270.0
+margin_bottom = 110.0
+rect_pivot_offset = Vector2( 60, 90 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CardSlot4" type="MarginContainer" parent="DeckPreview/Row1"]
+margin_left = 270.0
+margin_right = 360.0
+margin_bottom = 110.0
+rect_pivot_offset = Vector2( 60, 90 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CardSlot5" type="MarginContainer" parent="DeckPreview/Row1"]
+margin_left = 360.0
+margin_right = 450.0
+margin_bottom = 110.0
+rect_pivot_offset = Vector2( 60, 90 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CardSlot6" type="MarginContainer" parent="DeckPreview/Row1"]
+margin_left = 450.0
+margin_right = 540.0
+margin_bottom = 110.0
+rect_pivot_offset = Vector2( 60, 90 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CardSlot7" type="MarginContainer" parent="DeckPreview/Row1"]
+margin_left = 540.0
+margin_right = 630.0
+margin_bottom = 110.0
+rect_pivot_offset = Vector2( 60, 90 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CardSlot8" type="MarginContainer" parent="DeckPreview/Row1"]
+margin_left = 630.0
+margin_right = 720.0
+margin_bottom = 110.0
+rect_pivot_offset = Vector2( 60, 90 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CardSlot9" type="MarginContainer" parent="DeckPreview/Row1"]
+margin_left = 720.0
+margin_right = 810.0
+margin_bottom = 110.0
+rect_pivot_offset = Vector2( 60, 90 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CardSlot10" type="MarginContainer" parent="DeckPreview/Row1"]
+margin_left = 810.0
+margin_right = 900.0
+margin_bottom = 110.0
+rect_pivot_offset = Vector2( 60, 90 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Row2" type="Control" parent="DeckPreview"]
+margin_top = 260.0
+margin_right = 987.0
+margin_bottom = 370.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CardSlot1" type="MarginContainer" parent="DeckPreview/Row2"]
+margin_right = 90.0
+margin_bottom = 110.0
+rect_pivot_offset = Vector2( 60, 90 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CardSlot2" type="MarginContainer" parent="DeckPreview/Row2"]
+margin_left = 90.0
+margin_right = 180.0
+margin_bottom = 110.0
+rect_pivot_offset = Vector2( 60, 90 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CardSlot3" type="MarginContainer" parent="DeckPreview/Row2"]
+margin_left = 180.0
+margin_right = 270.0
+margin_bottom = 110.0
+rect_pivot_offset = Vector2( 60, 90 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CardSlot4" type="MarginContainer" parent="DeckPreview/Row2"]
+margin_left = 270.0
+margin_right = 360.0
+margin_bottom = 110.0
+rect_pivot_offset = Vector2( 60, 90 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CardSlot5" type="MarginContainer" parent="DeckPreview/Row2"]
+margin_left = 360.0
+margin_right = 450.0
+margin_bottom = 110.0
+rect_pivot_offset = Vector2( 60, 90 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CardSlot6" type="MarginContainer" parent="DeckPreview/Row2"]
+margin_left = 450.0
+margin_right = 540.0
+margin_bottom = 110.0
+rect_pivot_offset = Vector2( 60, 90 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CardSlot7" type="MarginContainer" parent="DeckPreview/Row2"]
+margin_left = 540.0
+margin_right = 630.0
+margin_bottom = 110.0
+rect_pivot_offset = Vector2( 60, 90 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CardSlot8" type="MarginContainer" parent="DeckPreview/Row2"]
+margin_left = 630.0
+margin_right = 720.0
+margin_bottom = 110.0
+rect_pivot_offset = Vector2( 60, 90 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CardSlot9" type="MarginContainer" parent="DeckPreview/Row2"]
+margin_left = 720.0
+margin_right = 810.0
+margin_bottom = 110.0
+rect_pivot_offset = Vector2( 60, 90 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CardSlot10" type="MarginContainer" parent="DeckPreview/Row2"]
+margin_left = 810.0
+margin_right = 900.0
+margin_bottom = 110.0
+rect_pivot_offset = Vector2( 60, 90 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Row3" type="Control" parent="DeckPreview"]
+margin_top = 370.0
+margin_right = 987.0
+margin_bottom = 480.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CardSlot1" type="MarginContainer" parent="DeckPreview/Row3"]
+margin_right = 90.0
+margin_bottom = 110.0
+rect_pivot_offset = Vector2( 60, 90 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CardSlot2" type="MarginContainer" parent="DeckPreview/Row3"]
+margin_left = 90.0
+margin_right = 180.0
+margin_bottom = 110.0
+rect_pivot_offset = Vector2( 60, 90 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CardSlot3" type="MarginContainer" parent="DeckPreview/Row3"]
+margin_left = 180.0
+margin_right = 270.0
+margin_bottom = 110.0
+rect_pivot_offset = Vector2( 60, 90 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CardSlot4" type="MarginContainer" parent="DeckPreview/Row3"]
+margin_left = 270.0
+margin_right = 360.0
+margin_bottom = 110.0
+rect_pivot_offset = Vector2( 60, 90 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CardSlot5" type="MarginContainer" parent="DeckPreview/Row3"]
+margin_left = 360.0
+margin_right = 450.0
+margin_bottom = 110.0
+rect_pivot_offset = Vector2( 60, 90 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CardSlot6" type="MarginContainer" parent="DeckPreview/Row3"]
+margin_left = 450.0
+margin_right = 540.0
+margin_bottom = 110.0
+rect_pivot_offset = Vector2( 60, 90 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CardSlot7" type="MarginContainer" parent="DeckPreview/Row3"]
+margin_left = 540.0
+margin_right = 630.0
+margin_bottom = 110.0
+rect_pivot_offset = Vector2( 60, 90 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CardSlot8" type="MarginContainer" parent="DeckPreview/Row3"]
+margin_left = 630.0
+margin_right = 720.0
+margin_bottom = 110.0
+rect_pivot_offset = Vector2( 60, 90 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CardSlot9" type="MarginContainer" parent="DeckPreview/Row3"]
+margin_left = 720.0
+margin_right = 810.0
+margin_bottom = 110.0
+rect_pivot_offset = Vector2( 60, 90 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CardSlot10" type="MarginContainer" parent="DeckPreview/Row3"]
+margin_left = 810.0
+margin_right = 900.0
+margin_bottom = 110.0
+rect_pivot_offset = Vector2( 60, 90 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Row4" type="Control" parent="DeckPreview"]
+margin_top = 480.0
+margin_right = 987.0
+margin_bottom = 590.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CardSlot1" type="MarginContainer" parent="DeckPreview/Row4"]
+margin_right = 90.0
+margin_bottom = 110.0
+rect_pivot_offset = Vector2( 60, 90 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CardSlot2" type="MarginContainer" parent="DeckPreview/Row4"]
+margin_left = 90.0
+margin_right = 180.0
+margin_bottom = 110.0
+rect_pivot_offset = Vector2( 60, 90 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CardSlot3" type="MarginContainer" parent="DeckPreview/Row4"]
+margin_left = 180.0
+margin_right = 270.0
+margin_bottom = 110.0
+rect_pivot_offset = Vector2( 60, 90 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CardSlot4" type="MarginContainer" parent="DeckPreview/Row4"]
+margin_left = 270.0
+margin_right = 360.0
+margin_bottom = 110.0
+rect_pivot_offset = Vector2( 60, 90 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CardSlot5" type="MarginContainer" parent="DeckPreview/Row4"]
+margin_left = 360.0
+margin_right = 450.0
+margin_bottom = 110.0
+rect_pivot_offset = Vector2( 60, 90 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CardSlot6" type="MarginContainer" parent="DeckPreview/Row4"]
+margin_left = 450.0
+margin_right = 540.0
+margin_bottom = 110.0
+rect_pivot_offset = Vector2( 60, 90 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CardSlot7" type="MarginContainer" parent="DeckPreview/Row4"]
+margin_left = 540.0
+margin_right = 630.0
+margin_bottom = 110.0
+rect_pivot_offset = Vector2( 60, 90 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CardSlot8" type="MarginContainer" parent="DeckPreview/Row4"]
+margin_left = 630.0
+margin_right = 720.0
+margin_bottom = 110.0
+rect_pivot_offset = Vector2( 60, 90 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CardSlot9" type="MarginContainer" parent="DeckPreview/Row4"]
+margin_left = 720.0
+margin_right = 810.0
+margin_bottom = 110.0
+rect_pivot_offset = Vector2( 60, 90 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CardSlot10" type="MarginContainer" parent="DeckPreview/Row4"]
+margin_left = 810.0
+margin_right = 900.0
+margin_bottom = 110.0
+rect_pivot_offset = Vector2( 60, 90 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Row5" type="Control" parent="DeckPreview"]
+margin_top = 590.0
+margin_right = 987.0
+margin_bottom = 700.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CardSlot1" type="MarginContainer" parent="DeckPreview/Row5"]
+margin_right = 90.0
+margin_bottom = 110.0
+rect_pivot_offset = Vector2( 60, 90 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CardSlot2" type="MarginContainer" parent="DeckPreview/Row5"]
+margin_left = 90.0
+margin_right = 180.0
+margin_bottom = 110.0
+rect_pivot_offset = Vector2( 60, 90 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CardSlot3" type="MarginContainer" parent="DeckPreview/Row5"]
+margin_left = 180.0
+margin_right = 270.0
+margin_bottom = 110.0
+rect_pivot_offset = Vector2( 60, 90 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CardSlot4" type="MarginContainer" parent="DeckPreview/Row5"]
+margin_left = 270.0
+margin_right = 360.0
+margin_bottom = 110.0
+rect_pivot_offset = Vector2( 60, 90 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CardSlot5" type="MarginContainer" parent="DeckPreview/Row5"]
+margin_left = 360.0
+margin_right = 450.0
+margin_bottom = 110.0
+rect_pivot_offset = Vector2( 60, 90 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CardSlot6" type="MarginContainer" parent="DeckPreview/Row5"]
+margin_left = 450.0
+margin_right = 540.0
+margin_bottom = 110.0
+rect_pivot_offset = Vector2( 60, 90 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CardSlot7" type="MarginContainer" parent="DeckPreview/Row5"]
+margin_left = 540.0
+margin_right = 630.0
+margin_bottom = 110.0
+rect_pivot_offset = Vector2( 60, 90 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CardSlot8" type="MarginContainer" parent="DeckPreview/Row5"]
+margin_left = 630.0
+margin_right = 720.0
+margin_bottom = 110.0
+rect_pivot_offset = Vector2( 60, 90 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CardSlot9" type="MarginContainer" parent="DeckPreview/Row5"]
+margin_left = 720.0
+margin_right = 810.0
+margin_bottom = 110.0
+rect_pivot_offset = Vector2( 60, 90 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CardSlot10" type="MarginContainer" parent="DeckPreview/Row5"]
+margin_left = 810.0
+margin_right = 900.0
+margin_bottom = 110.0
+rect_pivot_offset = Vector2( 60, 90 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="CardSearchBar" type="Control" parent="."]
+margin_left = 990.0
+margin_top = 360.0
+margin_right = 1272.0
+margin_bottom = 400.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SearchBar" type="LineEdit" parent="CardSearchBar"]
+margin_right = 282.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HoveredCardPreview" type="Control" parent="."]
+margin_left = 987.0
+margin_right = 1272.0
+margin_bottom = 360.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SearchedCardsContainer" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VScrollBar" type="VScrollBar" parent="SearchedCardsContainer"]
+visible = false
+margin_left = 990.0
+margin_top = 400.0
+margin_right = 1002.0
+margin_bottom = 412.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ScrollContainer" type="ScrollContainer" parent="SearchedCardsContainer/VScrollBar"]
+margin_right = 282.0
+margin_bottom = 316.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SearchedCardsContainer/VScrollBar/ScrollContainer"]
+[connection signal="pressed" from="Buttons/BackButton" to="Buttons/BackButton" method="_on_Button_pressed"]
+[connection signal="text_changed" from="CardSearchBar/SearchBar" to="." method="_on_SearchBar_text_changed"]
