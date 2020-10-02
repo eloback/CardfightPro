@@ -1,3 +1,13 @@
+var cards = [
+	"Blaster Blade",
+	"Goddess of Mercy, Inanna",
+	"Dragheart, Luard",
+	"Dragonic Overlord",
+	"Seeker, Sacred Wingal",
+	"Illusionary Revenger, Mordred Phantom",
+	"Lucky Rise, Elprina",
+	"Dragonic Blademaster"
+]
 
 func get_texture_path(name):
 	match name:
