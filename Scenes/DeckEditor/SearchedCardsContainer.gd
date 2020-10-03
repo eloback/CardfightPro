@@ -1,6 +1,6 @@
 extends Control
 
-var cardBase = preload("res://Card/CardBase.tscn")
+var cardBaseNode = preload("res://Card/CardBase.tscn")
 onready var cardDatabase = $".."._get_card_db()
 var searchedCardsArray = []
 
@@ -24,21 +24,19 @@ func getAppropriateMatches(target):
 func printSearchResults(results):
 	if results:
 		for card in results:
-			var cardSearshed = HBoxContainer.new()
-			var new_result = cardBase.instance()
-			var cardName = Label.new()
-			$VScrollBar/ScrollContainer/VBoxContainer.add_child(cardSearshed)
-			cardSearshed.set_name("CardSearshed")
-			new_result.set_name("CardBase")
-			cardName.set_name("Label")
-			cardName.text = card
-			cardSearshed.add_child(new_result)
-			cardSearshed.add_child(cardName)
-			new_result.rect_size = Vector2(60, 90)
-			new_result.rect_min_size = Vector2(60, 90)
-			new_result._change_card_in_display(card, cardDatabase)
-			new_result.connect("mouse_entered", $"../HoveredCardPreview", "_on_mouse_entered", [card])
-			#new_result.connect("mo")
+			var cardSearshed = HBoxContainer.new() # nova carta é formada por uma card base e label dentro de um hbox
+			var cardBase = cardBaseNode.instance()
+			var cardLabel = Label.new()
+			$VScrollBar/ScrollContainer/VBoxContainer.add_child(cardSearshed) #adiciona a nova Carta na busca
+			cardSearshed.add_child(cardBase) 
+			cardSearshed.add_child(cardLabel)
+			#configuração da nova carta
+			cardLabel.text = card 
+			cardBase.rect_size = Vector2(50, 80)
+			cardBase.rect_min_size = Vector2(50, 80)
+			cardBase._change_card_in_display(card, cardDatabase)
+			cardBase.connect("mouse_entered", $"../HoveredCardPreview", "_on_mouse_entered", [card]) #connect(<signal>, <node>, <func>, <[args]>)
+			#cardBase.connect("mo")
 	pass
 
 func clearPastSearchResults():
