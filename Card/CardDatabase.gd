@@ -27,5 +27,6 @@ func get_texture_path(name):
 			return "res://Assets/Textures/7.jpg"
 		"Dragonic Blademaster":
 			return "res://Assets/Textures/6.png"
-		"example":
-			return "res://Assets/Textures/CardBack.jpg" # Default card
+		_:
+			return "res://Assets/Textures/cardBack.jpg"
+		

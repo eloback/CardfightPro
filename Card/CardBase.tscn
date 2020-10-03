@@ -1,8 +1,6 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=2 format=2]
 
-[ext_resource path="res://Assets/Textures/8.jpg" type="Texture" id=1]
 [ext_resource path="res://Card/CardBase.gd" type="Script" id=2]
-[ext_resource path="res://Assets/Textures/CardBack.jpg" type="Texture" id=4]
 
 [node name="CardBase" type="MarginContainer"]
 margin_right = 220.0
@@ -15,12 +13,8 @@ __meta__ = {
 
 [node name="Card" type="Sprite" parent="."]
 visible = false
-texture = ExtResource( 1 )
 centered = false
 
 [node name="CardBack" type="Sprite" parent="."]
 visible = false
-texture = ExtResource( 4 )
 centered = false
-[connection signal="mouse_entered" from="." to="." method="_on_CardBase_mouse_entered"]
-[connection signal="mouse_exited" from="." to="." method="_on_CardBase_mouse_exited"]
