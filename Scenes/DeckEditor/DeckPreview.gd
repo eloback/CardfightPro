@@ -18,13 +18,13 @@ func _remove_card_from_deck(card):
 	else:
 		deck.erase(card)
 
-func _clear_deck_preview():
+func _clear_deck_preview(): #apaga todas as cartas do deck preview, não confundir deck preview com deck
 	for row in $".".get_children():
 		for cardSlot in row.get_children():
 			for child in cardSlot.get_children():
 				child.queue_free()
 
-func _load_deck():
+func _load_deck(): # carrega deck no deck preview
 	_clear_deck_preview()
 	var row = 0 #representa o filho do node atual
 	var cardSlot = 0 #representa o filho do filho do node atual e onde você quer inserir a carta
@@ -37,7 +37,7 @@ func _load_deck():
 			newCardBase.rect_size = cardSlotAtual.rect_size
 			newCardBase.rect_min_size = cardSlotAtual.rect_min_size 
 			newCardBase.connect("mouse_entered", $"../HoveredCardPreview", "_on_mouse_entered", [card])
-			newCardBase.connect("card_left_mouse_pressed", $".." , "remove_card_from_deck", [card])
+			newCardBase.connect("card_left_mouse_pressed", $".." , "_remove_card_from_deck", [card])
 			newCardBase._change_card_in_display(card, cardDB)
 			#Mudando o cardSlot ou linha que a carta vai ser inserida
 			cardSlot += 1

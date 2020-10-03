@@ -1,3 +1,4 @@
+#Dicionario de cartas, [chave] : [valor]
 var cards = {
 	"Blaster Blade" :  "res://Assets/Textures/1.jpg",
 	"Goddess of Mercy, Inanna" : "res://Assets/Textures/4.jpg",
@@ -10,8 +11,7 @@ var cards = {
 }
 
 func get_texture_path(name):
-		if cards.has(name):
-			return cards.get(name)
+		if cards.has(name): # tem chave <name>
+			return cards.get(name) # get valor de chave <name>
 		else:
 			return "res://Assets/Textures/cardBack.jpg"
-		

@@ -1,7 +1,6 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Scenes/back_to_title.gd" type="Script" id=1]
-[ext_resource path="res://Card/Card.gd" type="Script" id=2]
 [ext_resource path="res://Scenes/DeckEditor/NewDeckEditor.gd" type="Script" id=3]
 [ext_resource path="res://Card/CardBase.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/DeckEditor/HoveredCardPreview.gd" type="Script" id=5]
@@ -121,9 +120,6 @@ valign = 1
 __meta__ = {
 "_edit_group_": true
 }
-
-[node name="Card" type="Node2D" parent="."]
-script = ExtResource( 2 )
 
 [node name="DeckPreview" type="Control" parent="."]
 margin_right = 40.0
