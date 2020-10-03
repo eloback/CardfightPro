@@ -35,13 +35,11 @@ func printSearchResults(results):
 			cardBase.rect_min_size = Vector2(50, 80)
 			cardBase._change_card_in_display(card, cardDatabase)
 			cardBase.connect("mouse_entered", $"../HoveredCardPreview", "_on_mouse_entered", [card]) #connect(<signal>, <node>, <func>, <[args]>)
-			#cardBase.connect("mo")
-	pass
+			cardBase.connect("card_left_mouse_pressed", $".." , "add_card_to_deck", [card])
 
 func clearPastSearchResults():
 	for child in $VScrollBar/ScrollContainer/VBoxContainer.get_children():
 		child.remove_and_skip()
-	pass
 
 func _on_SearchBar_text_changed(target):
 	clearPastSearchResults()
