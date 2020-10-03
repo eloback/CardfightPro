@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Scenes/back_to_title.gd" type="Script" id=1]
 [ext_resource path="res://Card/Card.gd" type="Script" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://Card/CardBase.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/DeckEditor/HoveredCardPreview.gd" type="Script" id=5]
 [ext_resource path="res://Scenes/DeckEditor/SearchedCardsContainer.gd" type="Script" id=6]
+[ext_resource path="res://Scenes/DeckEditor/DeckPreview.gd" type="Script" id=7]
 
 [node name="DeckEditor" type="Control"]
 anchor_right = 1.0
@@ -127,6 +128,7 @@ script = ExtResource( 2 )
 [node name="DeckPreview" type="Control" parent="."]
 margin_right = 40.0
 margin_bottom = 40.0
+script = ExtResource( 7 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -147,11 +149,6 @@ __meta__ = {
 "_edit_group_": true
 }
 
-[node name="CardBase" parent="DeckPreview/Row1/CardSlot1" instance=ExtResource( 4 )]
-margin_right = 90.0
-margin_bottom = 110.0
-cardName = "Blaster Blade"
-
 [node name="CardSlot2" type="MarginContainer" parent="DeckPreview/Row1"]
 margin_left = 90.0
 margin_right = 180.0
@@ -161,11 +158,6 @@ __meta__ = {
 "_edit_group_": true,
 "_edit_use_anchors_": false
 }
-
-[node name="CardBase" parent="DeckPreview/Row1/CardSlot2" instance=ExtResource( 4 )]
-margin_right = 90.0
-margin_bottom = 110.0
-cardName = "Goddess of Mercy, Inanna"
 
 [node name="CardSlot3" type="MarginContainer" parent="DeckPreview/Row1"]
 margin_left = 180.0
@@ -256,11 +248,6 @@ rect_pivot_offset = Vector2( 60, 90 )
 __meta__ = {
 "_edit_group_": true
 }
-
-[node name="CardBase" parent="DeckPreview/Row2/CardSlot1" instance=ExtResource( 4 )]
-margin_right = 90.0
-margin_bottom = 110.0
-cardName = "Dragheart, Luard"
 
 [node name="CardSlot2" type="MarginContainer" parent="DeckPreview/Row2"]
 margin_left = 90.0
