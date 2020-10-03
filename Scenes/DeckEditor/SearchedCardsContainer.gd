@@ -5,7 +5,6 @@ onready var cardDatabase = $".."._get_card_db()
 var searchedCardsArray = []
 
 func getAppropriateMatches(target):
-	
 	var cards_searched = []
 	for card in cardDatabase.cards:
 			var matches = 0
