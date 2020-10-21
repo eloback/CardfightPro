@@ -687,3 +687,4 @@ visible = false
 [connection signal="pressed" from="Buttons/SaveDeckButton" to="." method="_on_SaveDeckButton_pressed"]
 [connection signal="pressed" from="Buttons/LoadDeckButton" to="." method="_on_LoadDeckButton_pressed"]
 [connection signal="text_changed" from="CardSearchBar/SearchBar" to="SearchedCardsContainer" method="_on_SearchBar_text_changed"]
+[connection signal="deck_loaded" from="FileController" to="." method="_set_deck"]

@@ -15,6 +15,7 @@ margin_left = 337.027
 margin_top = 189.027
 margin_right = 962.027
 margin_bottom = 552.027
+window_title = "Open a File"
 mode = 0
 access = 2
 current_dir = "/Github/CardfightPro"
