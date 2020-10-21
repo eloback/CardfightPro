@@ -12,7 +12,7 @@ func _ready(): # configurações do fileDialog
 	$FileDialog.current_dir = "user://"
 	$FileDialog.current_file = "deck"
 
-func _check_deck(deck): #verifica se o deck carregado é valido ou não
+func _check_deck(): #verifica se o deck carregado é valido ou não
 	if !deck:
 		return false
 	var count = 0
@@ -44,7 +44,7 @@ func _open_file(path):
 	f.open(path, File.READ)
 	deck = f.get_var()
 	f.close()
-	if _check_deck(deck):
+	if _check_deck():
 		emit_signal("deck_loaded", deck) #emite um sinal com o deck como parametro
 	push_warning("Deck Invalido")
 

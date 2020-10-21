@@ -28,9 +28,7 @@ func save_deck():
 
 func _on_LoadDeckButton_pressed(): #precisa de parametro de deck_name
 	load_deck()
-	pass
 
 func _on_SaveDeckButton_pressed(): #precisa de parametro de deck_name
 	$FileController.deck = $DeckPreview.deck
 	save_deck()
-	pass
