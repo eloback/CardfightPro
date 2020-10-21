@@ -1,8 +1,13 @@
-[gd_scene format=2]
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Scenes/back_to_title.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/File_Selector/File_Selector.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/DeckSelector/DeckSelection.gd" type="Script" id=3]
 
 [node name="DeckSelection" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+script = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -53,6 +58,7 @@ margin_top = 248.0
 margin_right = 911.0
 margin_bottom = 275.0
 text = "Back"
+script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -89,3 +95,7 @@ text = "Host Game"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="FileController" parent="." instance=ExtResource( 2 )]
+[connection signal="pressed" from="Buttons/LoadDeckButton" to="." method="_on_LoadDeckButton_pressed"]
+[connection signal="deck_loaded" from="FileController" to="." method="_on_FileController_deck_loaded"]
