@@ -1,5 +1,4 @@
 extends Control
-
 var deck = {} # {} significa dicionario, basicamente {"nome da carta": quantidade, ...}
 onready var cardDB = $".."._get_card_db()
 var cardBaseNode = preload("res://Card/CardBase.tscn")
