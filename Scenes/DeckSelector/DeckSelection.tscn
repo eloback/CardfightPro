@@ -38,16 +38,6 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="DeckNameColor" type="ColorRect" parent="Colors"]
-margin_left = 408.0
-margin_top = 312.0
-margin_right = 776.0
-margin_bottom = 344.0
-color = Color( 0.0235294, 0.145098, 0.211765, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="Buttons" type="Control" parent="."]
 margin_right = 40.0
 margin_bottom = 40.0
@@ -97,5 +87,15 @@ __meta__ = {
 }
 
 [node name="FileController" parent="." instance=ExtResource( 2 )]
+
+[node name="TextEdit" type="TextEdit" parent="."]
+margin_left = 413.335
+margin_top = 308.0
+margin_right = 774.335
+margin_bottom = 340.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="pressed" from="Buttons/LoadDeckButton" to="." method="_on_LoadDeckButton_pressed"]
+[connection signal="pressed" from="Buttons/HostGameButton" to="." method="_on_HostGameButton_pressed"]
 [connection signal="deck_loaded" from="FileController" to="." method="_on_FileController_deck_loaded"]

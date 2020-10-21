@@ -1,11 +1,7 @@
 extends Control
-var cardDB = preload("res://Card/CardDatabase.gd").new()
 
 func _ready(): #carrega o ultimo deck que o usuário estava modificando
 	$DeckPreview._load_deck()
-
-func _get_card_db():
-	return cardDB
 
 func _set_deck(newDeck): #carrega o deck escolhido pelo usuario, no deckPreview
 	$DeckPreview.deck = newDeck

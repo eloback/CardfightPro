@@ -1,7 +1,6 @@
 extends Control
 var deck = {} # {} significa dicionario, basicamente {"nome da carta": quantidade, ...}
-onready var cardDB = $".."._get_card_db()
-var cardBaseNode = preload("res://Card/CardBase.tscn")
+var cardBaseNode = load("res://Card/CardBase.tscn")
 	
 func _add_card_to_deck(card):
 	if deck.has(card):
@@ -37,7 +36,7 @@ func _load_deck(): # carrega deck no deck preview
 			newCardBase.rect_min_size = cardSlotAtual.rect_min_size 
 			newCardBase.connect("mouse_entered", $"../HoveredCardPreview", "_on_mouse_entered", [card])
 			newCardBase.connect("card_left_mouse_pressed", $".." , "_remove_card_from_deck", [card])
-			newCardBase._change_card_in_display(card, cardDB)
+			newCardBase._change_card_in_display(card)
 			#Mudando o cardSlot ou linha que a carta vai ser inserida
 			cardSlot += 1
 			if cardSlot > 9:

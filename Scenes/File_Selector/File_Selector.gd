@@ -4,7 +4,6 @@
 #	Também pode salvar um deck no diretorio escolhindo pelo usuario
 extends Control
 var deck = {}
-var cardDB = preload("res://Card/CardDatabase.gd").new()
 signal deck_loaded(newDeck)
 
 func _ready(): # configurações do fileDialog
@@ -17,7 +16,7 @@ func _check_deck(): #verifica se o deck carregado é valido ou não
 		return false
 	var count = 0
 	for card in deck:
-		if !cardDB.cards.has(card):
+		if !global.cardDatabase.cards.has(card):
 			return false
 		var cardNumber = deck.get(card)
 		if cardNumber < 1 or cardNumber > 4:
