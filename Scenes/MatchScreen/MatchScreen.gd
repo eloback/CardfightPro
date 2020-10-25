@@ -1,16 +1,20 @@
 extends Control
+#Como a interface vai ser alterada, centralizei as referencias aqui:
+onready var deck = [$Field/Player/Deck, $Field/Enemy/Deck]
+onready var hand = [$Field/Player/Hand, $Field/Enemy/Hand]
+onready var HoveredCardReference = $LateralBar/HoveredCardPreview
 
 
 func _ready():
-	$Deck._ready_deck()
-	$Deck._suffle()
-	$EnemyDeck._ready_deck()
-	$EnemyDeck._suffle()
+	deck[0]._ready_deck()
+	deck[0]._suffle()
+	deck[1]._ready_deck()
+	deck[1]._suffle()
 	pass
 
 func _turn_pass():
-	$Hand._draw_to_hand()
-	$EnemyHand._draw_to_hand()
+	hand[0]._draw_to_hand(deck[0], HoveredCardReference)
+	hand[1]._draw_to_hand(deck[1], HoveredCardReference)
 
 func _on_Button_Pass_pressed():
 	_turn_pass()

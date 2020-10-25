@@ -23,4 +23,6 @@ func _suffle():
 	deck.shuffle()
 
 func _draw_card():
+	if get_child_count() > 0 && deck.empty():
+		remove_child($CardBase)
 	return deck.pop_back()

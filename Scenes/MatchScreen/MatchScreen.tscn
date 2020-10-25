@@ -86,61 +86,313 @@ margin_right = 255.0
 margin_bottom = 701.0
 size_flags_vertical = 11
 
-[node name="Hand" type="HBoxContainer" parent="."]
-margin_left = 155.432
-margin_top = 520.0
-margin_right = 874.432
-margin_bottom = 705.0
-script = ExtResource( 5 )
+[node name="Field" type="VBoxContainer" parent="."]
+margin_top = 1.0
+margin_right = 1007.0
+margin_bottom = 716.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
-PlayerType = "player"
 
-[node name="EnemyHand" type="HBoxContainer" parent="."]
-margin_left = 179.216
-margin_top = 8.64099
-margin_right = 898.216
-margin_bottom = 193.641
+[node name="Enemy" type="Control" parent="Field"]
+margin_right = 1007.0
+margin_bottom = 355.0
+size_flags_vertical = 3
+
+[node name="Hand" type="HBoxContainer" parent="Field/Enemy"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -503.5
+margin_right = 503.5
+margin_bottom = 120.0
 script = ExtResource( 5 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 PlayerType = "enemy"
 
-[node name="Deck" type="PanelContainer" parent="."]
-anchor_top = -0.00165168
-anchor_bottom = -0.00165168
-margin_left = 852.406
-margin_top = 278.189
-margin_right = 993.406
-margin_bottom = 467.189
+[node name="Deck" type="PanelContainer" parent="Field/Enemy"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 18.8774
+margin_top = -139.438
+margin_right = 108.877
+margin_bottom = -19.4376
 script = ExtResource( 3 )
 __meta__ = {
-"_edit_use_anchors_": false
-}
-deckType = "player"
-
-[node name="CardBase" parent="Deck" instance=ExtResource( 1 )]
-margin_left = 7.0
-margin_top = 7.0
-margin_right = 134.0
-margin_bottom = 182.0
-
-[node name="EnemyDeck" type="PanelContainer" parent="."]
-margin_left = 18.772
-margin_top = 277.0
-margin_right = 159.772
-margin_bottom = 466.0
-script = ExtResource( 3 )
-__meta__ = {
+"_edit_group_": true,
 "_edit_use_anchors_": false
 }
 deckType = "enemy"
 
-[node name="CardBase" parent="EnemyDeck" instance=ExtResource( 1 )]
+[node name="CardBase" parent="Field/Enemy/Deck" instance=ExtResource( 1 )]
 margin_left = 7.0
 margin_top = 7.0
-margin_right = 134.0
-margin_bottom = 182.0
+margin_right = 82.9996
+margin_bottom = 113.0
+
+[node name="Bases" type="Control" parent="Field/Enemy"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -200.0
+margin_top = -215.0
+margin_right = 200.0
+margin_bottom = -10.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Base" type="Control" parent="Field/Enemy/Bases"]
+margin_right = 70.0
+margin_bottom = 100.0
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="CardBase" parent="Field/Enemy/Bases/Base" instance=ExtResource( 1 )]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 0.0
+margin_bottom = 0.0
+
+[node name="Base2" type="Control" parent="Field/Enemy/Bases"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -35.0
+margin_right = 35.0
+margin_bottom = 100.0
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="CardBase" parent="Field/Enemy/Bases/Base2" instance=ExtResource( 1 )]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 0.0
+margin_bottom = 0.0
+
+[node name="Base3" type="Control" parent="Field/Enemy/Bases"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -70.0
+margin_bottom = 100.0
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="CardBase" parent="Field/Enemy/Bases/Base3" instance=ExtResource( 1 )]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 0.0
+margin_bottom = 0.0
+
+[node name="Base4" type="Control" parent="Field/Enemy/Bases"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_top = -100.0
+margin_right = 70.0
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="CardBase" parent="Field/Enemy/Bases/Base4" instance=ExtResource( 1 )]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 0.0
+margin_bottom = 0.0
+
+[node name="Base5" type="Control" parent="Field/Enemy/Bases"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -35.0
+margin_top = -100.0
+margin_right = 35.0
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="CardBase" parent="Field/Enemy/Bases/Base5" instance=ExtResource( 1 )]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 0.0
+margin_bottom = 0.0
+
+[node name="Base6" type="Control" parent="Field/Enemy/Bases"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -70.0
+margin_top = -100.0
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="CardBase" parent="Field/Enemy/Bases/Base6" instance=ExtResource( 1 )]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 0.0
+margin_bottom = 0.0
+
+[node name="Player" type="Control" parent="Field"]
+margin_top = 359.0
+margin_right = 1007.0
+margin_bottom = 715.0
+size_flags_vertical = 3
+
+[node name="Hand" type="HBoxContainer" parent="Field/Player"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -503.5
+margin_top = -120.0
+margin_right = 503.5
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+PlayerType = "player"
+
+[node name="Deck" type="PanelContainer" parent="Field/Player"]
+anchor_top = -0.00165168
+anchor_bottom = -0.00165168
+margin_left = 886.695
+margin_top = 13.0759
+margin_right = 976.695
+margin_bottom = 133.076
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+deckType = "player"
+
+[node name="CardBase" parent="Field/Player/Deck" instance=ExtResource( 1 )]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 83.0
+margin_bottom = 113.0
+
+[node name="Bases" type="Control" parent="Field/Player"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -200.0
+margin_top = 10.0
+margin_right = 200.0
+margin_bottom = 215.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Base" type="Control" parent="Field/Player/Bases"]
+margin_right = 70.0
+margin_bottom = 100.0
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="CardBase" parent="Field/Player/Bases/Base" instance=ExtResource( 1 )]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 0.0
+margin_bottom = 0.0
+
+[node name="Base2" type="Control" parent="Field/Player/Bases"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -35.0
+margin_right = 35.0
+margin_bottom = 100.0
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="CardBase" parent="Field/Player/Bases/Base2" instance=ExtResource( 1 )]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 0.0
+margin_bottom = 0.0
+
+[node name="Base3" type="Control" parent="Field/Player/Bases"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -70.0
+margin_bottom = 100.0
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="CardBase" parent="Field/Player/Bases/Base3" instance=ExtResource( 1 )]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 0.0
+margin_bottom = 0.0
+
+[node name="Base4" type="Control" parent="Field/Player/Bases"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_top = -100.0
+margin_right = 70.0
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="CardBase" parent="Field/Player/Bases/Base4" instance=ExtResource( 1 )]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 0.0
+margin_bottom = 0.0
+
+[node name="Base5" type="Control" parent="Field/Player/Bases"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -35.0
+margin_top = -100.0
+margin_right = 35.0
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="CardBase" parent="Field/Player/Bases/Base5" instance=ExtResource( 1 )]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 0.0
+margin_bottom = 0.0
+
+[node name="Base6" type="Control" parent="Field/Player/Bases"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -70.0
+margin_top = -100.0
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="CardBase" parent="Field/Player/Bases/Base6" instance=ExtResource( 1 )]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 0.0
+margin_bottom = 0.0
 [connection signal="pressed" from="LateralBar/HBoxContainer/Button_Pass" to="." method="_on_Button_Pass_pressed"]

@@ -1,5 +1,7 @@
 extends MarginContainer
 export var cardName = ""
+onready var originalNode = $".."
+var mouse_locked = false
 signal card_left_mouse_pressed
 
 func _ready():
@@ -9,6 +11,10 @@ func _ready():
 	$Card.scale = rect_size/$Card.texture.get_size()
 	$CardBack.scale = rect_size/$CardBack.texture.get_size()
 	$Card.show()
+
+func _process(delta):
+	if mouse_locked:
+		set_position(get_viewport().get_mouse_position())
 
 func _change_card_in_display(card):
 	$Card.texture = load(global.get_texture_path(card))
