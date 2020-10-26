@@ -1,0 +1,101 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Scenes/back_to_title.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/File_Selector/File_Selector.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/DeckSelector/DeckSelection.gd" type="Script" id=3]
+
+[node name="DeckSelection" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Colors" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BackgroundColor" type="ColorRect" parent="Colors"]
+margin_right = 1280.0
+margin_bottom = 720.0
+color = Color( 0.231373, 0.482353, 0.623529, 1 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="WindowColor" type="ColorRect" parent="Colors"]
+margin_left = 400.0
+margin_top = 248.0
+margin_right = 911.0
+margin_bottom = 419.0
+color = Color( 0.054902, 0.192157, 0.270588, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Buttons" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="BackButton" type="Button" parent="Buttons"]
+margin_left = 840.0
+margin_top = 248.0
+margin_right = 911.0
+margin_bottom = 275.0
+text = "Back"
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LoadDeckButton" type="Button" parent="Buttons"]
+margin_left = 784.0
+margin_top = 312.0
+margin_right = 891.0
+margin_bottom = 339.0
+rect_pivot_offset = Vector2( 15.4458, 52.9614 )
+text = "Load Deck"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ConnectButton" type="Button" parent="Buttons"]
+margin_left = 768.0
+margin_top = 384.0
+margin_right = 894.0
+margin_bottom = 411.0
+rect_pivot_offset = Vector2( 15.4458, 52.9614 )
+text = "Connect to a Host"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HostGameButton" type="Button" parent="Buttons"]
+margin_left = 648.0
+margin_top = 384.0
+margin_right = 755.0
+margin_bottom = 411.0
+rect_pivot_offset = Vector2( 15.4458, 52.9614 )
+text = "Host Game"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="FileController" parent="." instance=ExtResource( 2 )]
+
+[node name="TextEdit" type="TextEdit" parent="."]
+margin_left = 413.335
+margin_top = 308.0
+margin_right = 774.335
+margin_bottom = 340.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="Buttons/LoadDeckButton" to="." method="_on_LoadDeckButton_pressed"]
+[connection signal="pressed" from="Buttons/HostGameButton" to="." method="_on_HostGameButton_pressed"]
+[connection signal="deck_loaded" from="FileController" to="." method="_on_FileController_deck_loaded"]

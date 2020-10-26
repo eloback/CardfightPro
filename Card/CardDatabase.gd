@@ -9,9 +9,3 @@ var cards = {
 	"Lucky Rise, Elprina" : "res://Assets/Textures/7.jpg",
 	"Dragonic Blademaster" : "res://Assets/Textures/6.png"
 }
-
-func get_texture_path(name):
-		if cards.has(name): # tem chave <name>
-			return cards.get(name) # get valor de chave <name>
-		else:
-			return "res://Assets/Textures/cardBack.jpg"

@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Scenes/back_to_title.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/File_Selector/File_Selector.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/DeckEditor/NewDeckEditor.gd" type="Script" id=3]
 [ext_resource path="res://Card/CardBase.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/DeckEditor/HoveredCardPreview.gd" type="Script" id=5]
@@ -679,7 +680,9 @@ __meta__ = {
 }
 
 [node name="VBoxContainer" type="VBoxContainer" parent="SearchedCardsContainer/VScrollBar/ScrollContainer"]
-[connection signal="pressed" from="Buttons/BackButton" to="Buttons/BackButton" method="_on_Button_pressed"]
+
+[node name="FileController" parent="." instance=ExtResource( 2 )]
 [connection signal="pressed" from="Buttons/SaveDeckButton" to="." method="_on_SaveDeckButton_pressed"]
 [connection signal="pressed" from="Buttons/LoadDeckButton" to="." method="_on_LoadDeckButton_pressed"]
 [connection signal="text_changed" from="CardSearchBar/SearchBar" to="SearchedCardsContainer" method="_on_SearchBar_text_changed"]
+[connection signal="deck_loaded" from="FileController" to="." method="_set_deck"]

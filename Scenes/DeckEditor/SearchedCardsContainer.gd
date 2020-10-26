@@ -1,12 +1,11 @@
 extends Control
 
 var cardBaseNode = preload("res://Card/CardBase.tscn")
-onready var cardDatabase = $".."._get_card_db()
 var searchedCardsArray = []
 
 func _get_appropriate_matches(target): # procura dentro do database de cartas, uma carta alvo
 	var cards_searched = []
-	for card in cardDatabase.cards:
+	for card in global.cardDatabase.cards:
 			var matches = 0
 			for i in range(target.length()):
 				if i >= card.length():
@@ -33,7 +32,7 @@ func _print_search_results(results):
 			cardLabel.text = card 
 			cardBase.rect_size = Vector2(50, 80)
 			cardBase.rect_min_size = Vector2(50, 80)
-			cardBase._change_card_in_display(card, cardDatabase)
+			cardBase._change_card_in_display(card)
 			cardBase.connect("mouse_entered", $"../HoveredCardPreview", "_on_mouse_entered", [card]) #connect(<signal>, <node>, <func>, <[args]>)
 			cardBase.connect("card_left_mouse_pressed", $".." , "_add_card_to_deck", [card])
 

@@ -1,0 +1,26 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Scenes/File_Selector/File_Selector.gd" type="Script" id=1]
+
+[node name="FileController" type="Control"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="FileDialog" type="FileDialog" parent="."]
+margin_left = 337.027
+margin_top = 189.027
+margin_right = 962.027
+margin_bottom = 552.027
+window_title = "Open a File"
+mode = 0
+access = 2
+current_dir = "/Github/CardfightPro"
+current_path = "/Github/CardfightPro/"
+__meta__ = {
+"_edit_use_anchors_": false
+}
