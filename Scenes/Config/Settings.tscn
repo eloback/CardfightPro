@@ -1,21 +1,20 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Scenes/Config/Settings.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Fonts/Comfortaa35.tres" type="DynamicFont" id=2]
 [ext_resource path="res://Assets/Fonts/Landasans50.tres" type="DynamicFont" id=3]
-[ext_resource path="res://Assets/Audio/Pirates.wav" type="AudioStream" id=4]
 [ext_resource path="res://Scenes/Config/Btn_save_changes.gd" type="Script" id=5]
 [ext_resource path="res://Scenes/Config/LineEdit.gd" type="Script" id=6]
 
-[sub_resource type="StyleBoxFlat" id=5]
-
-[sub_resource type="StyleBoxTexture" id=4]
-
 [sub_resource type="StyleBoxFlat" id=1]
 
-[sub_resource type="StyleBoxEmpty" id=2]
+[sub_resource type="StyleBoxTexture" id=2]
 
-[sub_resource type="StyleBoxEmpty" id=3]
+[sub_resource type="StyleBoxFlat" id=3]
+
+[sub_resource type="StyleBoxEmpty" id=4]
+
+[sub_resource type="StyleBoxEmpty" id=5]
 
 [node name="Control" type="Control"]
 anchor_left = 0.004
@@ -33,7 +32,6 @@ __meta__ = {
 }
 
 [node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 4 )
 autoplay = true
 
 [node name="Label" type="Label" parent="."]
@@ -78,7 +76,7 @@ margin_top = 54.0
 margin_right = 400.0
 margin_bottom = 144.0
 rect_min_size = Vector2( 400, 90 )
-custom_styles/panel = SubResource( 5 )
+custom_styles/panel = SubResource( 1 )
 
 [node name="Label_fullscreen" type="Label" parent="Setting_menu/Panel_fullscreen"]
 margin_left = 43.4182
@@ -100,7 +98,7 @@ margin_top = 28.0
 margin_right = 296.867
 margin_bottom = 32.03
 rect_scale = Vector2( 2, 2 )
-custom_styles/normal = SubResource( 4 )
+custom_styles/normal = SubResource( 2 )
 custom_colors/font_color_disabled = Color( 0.784314, 0.741176, 0.741176, 1 )
 custom_colors/font_color_pressed = Color( 0.756863, 0.737255, 0.737255, 1 )
 __meta__ = {
@@ -112,15 +110,15 @@ margin_top = 148.0
 margin_right = 400.0
 margin_bottom = 328.0
 rect_min_size = Vector2( 400, 180 )
-custom_styles/panel = SubResource( 1 )
+custom_styles/panel = SubResource( 3 )
 
 [node name="Btn_On_Off" type="CheckButton" parent="Setting_menu/Panel"]
 margin_left = 235.37
 margin_top = 19.3561
 margin_right = 311.37
 margin_bottom = 59.3561
-custom_styles/hover = SubResource( 2 )
-custom_styles/pressed = SubResource( 3 )
+custom_styles/hover = SubResource( 4 )
+custom_styles/pressed = SubResource( 5 )
 pressed = true
 __meta__ = {
 "_edit_use_anchors_": false

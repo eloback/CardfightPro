@@ -15,7 +15,6 @@ func load_file():
 	var f = File.new()
 	f.open(file, File.READ)
 	var data = f.get_var() 
-	print(data)
 	load_data(data)
 	return 
 
