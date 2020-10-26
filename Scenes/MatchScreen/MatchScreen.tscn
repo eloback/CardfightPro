@@ -1,10 +1,12 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Card/CardBase.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/MatchScreen/MatchScreen.gd" type="Script" id=2]
 [ext_resource path="res://Scenes/MatchScreen/Deck.gd" type="Script" id=3]
 [ext_resource path="res://Scenes/DeckEditor/HoveredCardPreview.gd" type="Script" id=4]
 [ext_resource path="res://Scenes/MatchScreen/Hand.gd" type="Script" id=5]
+[ext_resource path="res://Scenes/MatchScreen/Base.gd" type="Script" id=6]
+[ext_resource path="res://Scenes/MatchScreen/Field.gd" type="Script" id=7]
 
 [node name="Control" type="Control"]
 anchor_right = 1.0
@@ -109,7 +111,6 @@ script = ExtResource( 5 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-PlayerType = "enemy"
 
 [node name="Deck" type="PanelContainer" parent="Field/Enemy"]
 anchor_top = 1.0
@@ -249,6 +250,7 @@ margin_top = 359.0
 margin_right = 1007.0
 margin_bottom = 715.0
 size_flags_vertical = 3
+script = ExtResource( 7 )
 
 [node name="Hand" type="HBoxContainer" parent="Field/Player"]
 anchor_left = 0.5
@@ -262,7 +264,6 @@ script = ExtResource( 5 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-PlayerType = "player"
 
 [node name="Deck" type="PanelContainer" parent="Field/Player"]
 anchor_top = -0.00165168
@@ -299,6 +300,7 @@ __meta__ = {
 [node name="Base" type="Control" parent="Field/Player/Bases"]
 margin_right = 70.0
 margin_bottom = 100.0
+script = ExtResource( 6 )
 __meta__ = {
 "_edit_group_": true,
 "_edit_use_anchors_": false
@@ -316,6 +318,7 @@ anchor_right = 0.5
 margin_left = -35.0
 margin_right = 35.0
 margin_bottom = 100.0
+script = ExtResource( 6 )
 __meta__ = {
 "_edit_group_": true,
 "_edit_use_anchors_": false
@@ -332,6 +335,7 @@ anchor_left = 1.0
 anchor_right = 1.0
 margin_left = -70.0
 margin_bottom = 100.0
+script = ExtResource( 6 )
 __meta__ = {
 "_edit_group_": true,
 "_edit_use_anchors_": false
@@ -348,6 +352,7 @@ anchor_top = 1.0
 anchor_bottom = 1.0
 margin_top = -100.0
 margin_right = 70.0
+script = ExtResource( 6 )
 __meta__ = {
 "_edit_group_": true,
 "_edit_use_anchors_": false
@@ -367,6 +372,7 @@ anchor_bottom = 1.0
 margin_left = -35.0
 margin_top = -100.0
 margin_right = 35.0
+script = ExtResource( 6 )
 __meta__ = {
 "_edit_group_": true,
 "_edit_use_anchors_": false
@@ -385,6 +391,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = -70.0
 margin_top = -100.0
+script = ExtResource( 6 )
 __meta__ = {
 "_edit_group_": true,
 "_edit_use_anchors_": false
@@ -396,3 +403,4 @@ anchor_bottom = 1.0
 margin_right = 0.0
 margin_bottom = 0.0
 [connection signal="pressed" from="LateralBar/HBoxContainer/Button_Pass" to="." method="_on_Button_Pass_pressed"]
+[connection signal="fild_left_mouse_pressed" from="Field/Player" to="Field/Player/Hand" method="_on_Player_fild_left_mouse_pressed"]

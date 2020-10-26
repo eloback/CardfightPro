@@ -14,9 +14,10 @@ func _ready():
 
 func _process(delta):
 	if mouse_locked:
-		set_position(get_viewport().get_mouse_position())
+		set_position(get_viewport().get_mouse_position()+Vector2(1, 1))
 
 func _change_card_in_display(card):
+	cardName = card
 	$Card.texture = load(global.get_texture_path(card))
 	$Card.scale = rect_size/$Card.texture.get_size()
 

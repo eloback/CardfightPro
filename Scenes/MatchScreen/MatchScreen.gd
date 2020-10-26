@@ -4,7 +4,6 @@ onready var deck = [$Field/Player/Deck, $Field/Enemy/Deck]
 onready var hand = [$Field/Player/Hand, $Field/Enemy/Hand]
 onready var HoveredCardReference = $LateralBar/HoveredCardPreview
 
-
 func _ready():
 	deck[0]._ready_deck()
 	deck[0]._suffle()
@@ -13,8 +12,10 @@ func _ready():
 	pass
 
 func _turn_pass():
-	hand[0]._draw_to_hand(deck[0], HoveredCardReference)
-	hand[1]._draw_to_hand(deck[1], HoveredCardReference)
+	hand[0]._draw_to_hand(deck[0])
+	hand[1]._draw_to_hand(deck[1])
 
 func _on_Button_Pass_pressed():
 	_turn_pass()
+
+
