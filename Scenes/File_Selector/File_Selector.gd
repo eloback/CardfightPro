@@ -22,9 +22,9 @@ func _check_deck(): #verifica se o deck carregado é valido ou não
 		if cardNumber < 1 or cardNumber > 4:
 			return false
 		count += cardNumber
-	if count > 50:
-		return false
-	return true
+	if count == 50:
+		return true
+	return false
 
 func _open_file_dialog(mode): #abre e configura o dialog
 	match mode:
@@ -33,9 +33,12 @@ func _open_file_dialog(mode): #abre e configura o dialog
 			$FileDialog.set_mode(FileDialog.MODE_OPEN_FILE)
 			$FileDialog.connect("file_selected", self, "_open_file")
 		"save":
+			if !_check_deck():
+				return
 			$FileDialog.disconnect("file_selected", self, "_open_file")
 			$FileDialog.set_mode(FileDialog.MODE_SAVE_FILE)
 			$FileDialog.connect("file_selected", self, "_save_file")
+			
 	$FileDialog.popup()
 
 func _open_file(path):
@@ -52,3 +55,4 @@ func _save_file(path):
 	save_deck.open(path, File.WRITE)
 	save_deck.store_var(deck)
 	save_deck.close()
+	

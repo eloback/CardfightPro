@@ -42,4 +42,7 @@ func _load_deck(): # carrega deck no deck preview
 			if cardSlot > 9:
 				row += 1
 				cardSlot = 0
+				
+			if row > 4:
+				return
 		
