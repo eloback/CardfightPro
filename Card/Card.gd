@@ -29,4 +29,3 @@ class Card:
 		
 	func testFunc():
 		pass
-

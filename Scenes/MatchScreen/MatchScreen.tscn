@@ -1,0 +1,406 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Card/CardBase.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/MatchScreen/MatchScreen.gd" type="Script" id=2]
+[ext_resource path="res://Scenes/MatchScreen/Deck.gd" type="Script" id=3]
+[ext_resource path="res://Scenes/DeckEditor/HoveredCardPreview.gd" type="Script" id=4]
+[ext_resource path="res://Scenes/MatchScreen/Hand.gd" type="Script" id=5]
+[ext_resource path="res://Scenes/MatchScreen/Base.gd" type="Script" id=6]
+[ext_resource path="res://Scenes/MatchScreen/Field.gd" type="Script" id=7]
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 1266.0
+margin_bottom = 706.0
+color = Color( 0.321569, 0.337255, 0.419608, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect2" type="ColorRect" parent="CanvasLayer"]
+margin_left = 1005.0
+margin_top = 3.0
+margin_right = 1265.0
+margin_bottom = 707.0
+size_flags_vertical = 3
+color = Color( 0.117647, 0.160784, 0.384314, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LateralBar" type="VBoxContainer" parent="."]
+margin_left = 1008.62
+margin_top = 6.13525
+margin_right = 1263.62
+margin_bottom = 708.135
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HoveredCardPreview" type="PanelContainer" parent="LateralBar"]
+margin_right = 255.0
+margin_bottom = 336.0
+size_flags_vertical = 3
+script = ExtResource( 4 )
+
+[node name="CardBase" parent="LateralBar/HoveredCardPreview" instance=ExtResource( 1 )]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 248.0
+margin_bottom = 329.0
+size_flags_horizontal = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="LateralBar"]
+margin_top = 340.0
+margin_right = 255.0
+margin_bottom = 360.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button_Pass" type="Button" parent="LateralBar/HBoxContainer"]
+margin_right = 125.0
+margin_bottom = 20.0
+size_flags_horizontal = 3
+text = "Pass Turn"
+
+[node name="Button2" type="Button" parent="LateralBar/HBoxContainer"]
+margin_left = 129.0
+margin_right = 255.0
+margin_bottom = 20.0
+size_flags_horizontal = 3
+
+[node name="TextEdit" type="TextEdit" parent="LateralBar"]
+margin_top = 364.0
+margin_right = 255.0
+margin_bottom = 701.0
+size_flags_vertical = 11
+
+[node name="Field" type="VBoxContainer" parent="."]
+margin_top = 1.0
+margin_right = 1007.0
+margin_bottom = 716.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Enemy" type="Control" parent="Field"]
+margin_right = 1007.0
+margin_bottom = 355.0
+size_flags_vertical = 3
+
+[node name="Hand" type="HBoxContainer" parent="Field/Enemy"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -503.5
+margin_right = 503.5
+margin_bottom = 120.0
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Deck" type="PanelContainer" parent="Field/Enemy"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 18.8774
+margin_top = -139.438
+margin_right = 108.877
+margin_bottom = -19.4376
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+deckType = "enemy"
+
+[node name="CardBase" parent="Field/Enemy/Deck" instance=ExtResource( 1 )]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 82.9996
+margin_bottom = 113.0
+
+[node name="Bases" type="Control" parent="Field/Enemy"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -200.0
+margin_top = -215.0
+margin_right = 200.0
+margin_bottom = -10.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Base" type="Control" parent="Field/Enemy/Bases"]
+margin_right = 70.0
+margin_bottom = 100.0
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="CardBase" parent="Field/Enemy/Bases/Base" instance=ExtResource( 1 )]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 0.0
+margin_bottom = 0.0
+
+[node name="Base2" type="Control" parent="Field/Enemy/Bases"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -35.0
+margin_right = 35.0
+margin_bottom = 100.0
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="CardBase" parent="Field/Enemy/Bases/Base2" instance=ExtResource( 1 )]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 0.0
+margin_bottom = 0.0
+
+[node name="Base3" type="Control" parent="Field/Enemy/Bases"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -70.0
+margin_bottom = 100.0
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="CardBase" parent="Field/Enemy/Bases/Base3" instance=ExtResource( 1 )]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 0.0
+margin_bottom = 0.0
+
+[node name="Base4" type="Control" parent="Field/Enemy/Bases"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_top = -100.0
+margin_right = 70.0
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="CardBase" parent="Field/Enemy/Bases/Base4" instance=ExtResource( 1 )]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 0.0
+margin_bottom = 0.0
+
+[node name="Base5" type="Control" parent="Field/Enemy/Bases"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -35.0
+margin_top = -100.0
+margin_right = 35.0
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="CardBase" parent="Field/Enemy/Bases/Base5" instance=ExtResource( 1 )]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 0.0
+margin_bottom = 0.0
+
+[node name="Base6" type="Control" parent="Field/Enemy/Bases"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -70.0
+margin_top = -100.0
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="CardBase" parent="Field/Enemy/Bases/Base6" instance=ExtResource( 1 )]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 0.0
+margin_bottom = 0.0
+
+[node name="Player" type="Control" parent="Field"]
+margin_top = 359.0
+margin_right = 1007.0
+margin_bottom = 715.0
+size_flags_vertical = 3
+script = ExtResource( 7 )
+
+[node name="Hand" type="HBoxContainer" parent="Field/Player"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -503.5
+margin_top = -120.0
+margin_right = 503.5
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Deck" type="PanelContainer" parent="Field/Player"]
+anchor_top = -0.00165168
+anchor_bottom = -0.00165168
+margin_left = 886.695
+margin_top = 13.0759
+margin_right = 976.695
+margin_bottom = 133.076
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+deckType = "player"
+
+[node name="CardBase" parent="Field/Player/Deck" instance=ExtResource( 1 )]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 83.0
+margin_bottom = 113.0
+
+[node name="Bases" type="Control" parent="Field/Player"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -200.0
+margin_top = 10.0
+margin_right = 200.0
+margin_bottom = 215.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Base" type="Control" parent="Field/Player/Bases"]
+margin_right = 70.0
+margin_bottom = 100.0
+script = ExtResource( 6 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="CardBase" parent="Field/Player/Bases/Base" instance=ExtResource( 1 )]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 0.0
+margin_bottom = 0.0
+
+[node name="Base2" type="Control" parent="Field/Player/Bases"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -35.0
+margin_right = 35.0
+margin_bottom = 100.0
+script = ExtResource( 6 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="CardBase" parent="Field/Player/Bases/Base2" instance=ExtResource( 1 )]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 0.0
+margin_bottom = 0.0
+
+[node name="Base3" type="Control" parent="Field/Player/Bases"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -70.0
+margin_bottom = 100.0
+script = ExtResource( 6 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="CardBase" parent="Field/Player/Bases/Base3" instance=ExtResource( 1 )]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 0.0
+margin_bottom = 0.0
+
+[node name="Base4" type="Control" parent="Field/Player/Bases"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_top = -100.0
+margin_right = 70.0
+script = ExtResource( 6 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="CardBase" parent="Field/Player/Bases/Base4" instance=ExtResource( 1 )]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 0.0
+margin_bottom = 0.0
+
+[node name="Base5" type="Control" parent="Field/Player/Bases"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -35.0
+margin_top = -100.0
+margin_right = 35.0
+script = ExtResource( 6 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="CardBase" parent="Field/Player/Bases/Base5" instance=ExtResource( 1 )]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 0.0
+margin_bottom = 0.0
+
+[node name="Base6" type="Control" parent="Field/Player/Bases"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -70.0
+margin_top = -100.0
+script = ExtResource( 6 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="CardBase" parent="Field/Player/Bases/Base6" instance=ExtResource( 1 )]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 0.0
+margin_bottom = 0.0
+[connection signal="pressed" from="LateralBar/HBoxContainer/Button_Pass" to="." method="_on_Button_Pass_pressed"]
+[connection signal="fild_left_mouse_pressed" from="Field/Player" to="Field/Player/Hand" method="_on_Player_fild_left_mouse_pressed"]

@@ -1,3 +1,4 @@
+#Dicionario de cartas, [chave] : [valor]
 var cards = {
 	"Blaster Blade" :  "res://Assets/Textures/1.jpg",
 	"Goddess of Mercy, Inanna" : "res://Assets/Textures/4.jpg",
@@ -8,10 +9,3 @@ var cards = {
 	"Lucky Rise, Elprina" : "res://Assets/Textures/7.jpg",
 	"Dragonic Blademaster" : "res://Assets/Textures/6.png"
 }
-
-func get_texture_path(name):
-		if cards.has(name):
-			return cards.get(name)
-		else:
-			return "res://Assets/Textures/cardBack.jpg"
-		
