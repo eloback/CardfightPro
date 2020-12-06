@@ -1,5 +1,5 @@
 extends Control
-var deck = {} # {} significa dicionario, basicamente {"nome da carta": quantidade, ...}
+var deck = {"Blaster Blade" : 51} # {} significa dicionario, basicamente {"nome da carta": quantidade, ...}
 var cardBaseNode = load("res://Card/CardBase.tscn")
 	
 func _add_card_to_deck(card):
@@ -42,4 +42,5 @@ func _load_deck(): # carrega deck no deck preview
 			if cardSlot > 9:
 				row += 1
 				cardSlot = 0
-		
+			if row > 4:
+				return

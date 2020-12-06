@@ -19,6 +19,9 @@ func load_file():
 	return 
 
 func save_file():
+	####
+	global.player_name = player_name #Provisorio???
+	###
 	var arq = File.new()
 	arq.open(file, File.WRITE)
 	var data = {"nome jogador" : player_name, "Modo tela": OS.window_fullscreen}

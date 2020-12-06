@@ -97,5 +97,6 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 [connection signal="pressed" from="Buttons/LoadDeckButton" to="." method="_on_LoadDeckButton_pressed"]
+[connection signal="pressed" from="Buttons/ConnectButton" to="." method="_on_ConnectButton_pressed"]
 [connection signal="pressed" from="Buttons/HostGameButton" to="." method="_on_HostGameButton_pressed"]
 [connection signal="deck_loaded" from="FileController" to="." method="_on_FileController_deck_loaded"]

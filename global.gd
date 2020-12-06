@@ -2,6 +2,7 @@ extends Node
 var Card = preload("res://Card/Card.gd")
 var cardDatabase = preload("res://Card/CardDatabase.gd").new()
 
+var player_name = "default"
 var ip
 var deck = {"Blaster Blade": 2}
 var enemy_deck = {"Seeker, Sacred Wingal": 3}

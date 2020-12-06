@@ -33,6 +33,8 @@ func _open_file_dialog(mode): #abre e configura o dialog
 			$FileDialog.set_mode(FileDialog.MODE_OPEN_FILE)
 			$FileDialog.connect("file_selected", self, "_open_file")
 		"save":
+			if _check_deck():
+				return
 			$FileDialog.disconnect("file_selected", self, "_open_file")
 			$FileDialog.set_mode(FileDialog.MODE_SAVE_FILE)
 			$FileDialog.connect("file_selected", self, "_save_file")
